@@ -124,7 +124,7 @@
 }
 
 .focusbox-one {
-    border: solid 20px #FFA630;
+    border: solid 1em #FFA630;
     grid-area: focusbox-one;
     padding-left: 10%;
     padding-right: 10%;
@@ -234,13 +234,13 @@
 
 .numbersbox-one {
     grid-area: numbersbox-one;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 
 .numbersimg2 {
     grid-area: numbersimg2;
-    justify-self: right;
-    margin-right: 20px;
+    justify-self: center;
+    margin-left: 30%;
 }
 
 .numbersbox-two {
@@ -249,8 +249,8 @@
 
 .numbersimg3 {
     grid-area: numbersimg3;
-    justify-self: right;
-    margin-right: 20px;
+    justify-self: center;
+    margin-left: 30%;
 }
 
 .numbersbox-three {
@@ -259,8 +259,8 @@
 
 .numbersimg4 {
     grid-area: numbersimg4;
-    justify-self: right;
-    margin-right: 20px;
+    justify-self: center;
+    margin-left: 30%;
 }
 
 .numbersbox-four {
@@ -269,8 +269,8 @@
 
 .numbersimg5 {
     grid-area: numbersimg5;
-    justify-self: right;
-    margin-right: 20px;
+    justify-self: center;
+    margin-left: 30%;
 }
 
 .numbersbox-five {
@@ -279,8 +279,8 @@
 
 .numbersimg6 {
     grid-area: numbersimg6;
-    justify-self: right;
-    margin-right: 20px;
+    justify-self: center;
+    margin-left: 30%;
 }
 
 .numbersbox-six {
@@ -301,7 +301,7 @@
 }
 
 .projectbox-one {
-    border: solid 20px #FFA630;
+    border: solid 1em #FFA630;
     grid-area: projectbox-one;
     padding-right: 10%;
     padding-left: 10%;
@@ -623,7 +623,6 @@ a.nav-link {
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0.2px;
-    padding-right: 40px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5)
 }
@@ -743,13 +742,63 @@ a.footer-link:hover {
     line-height: 16px;
     letter-spacing: 0.2px;
     border: none;
-    margin-top: 40px;
+    margin-top: 20%;
     color: #37392E;
     background: #EF3527;
 }
 
 /** Оформление: картинки (по порядку)---------------------------------------------------------------------------------- **/
+.solarbox-logo,
+.round-btn {
+    height: 100%;
+}
 
+.logos-one,
+.logos-two,
+.logos-three,
+.logos-four {
+    height: 100%;
+}
+
+.yellow-line {
+    width: 10%;
+}
+
+.about-laptop {
+    width: 100%;
+}
+
+.about-rectangle {
+    width: 100%;
+}
+
+.red-line {
+    width: 70%;
+}
+
+.numbersimg2,
+.numbersimg3,
+.numbersimg4,
+.numbersimg5,
+.numbersimg6 {
+    width: 40%;
+}
+
+.long-yellow-line {
+    width: 88%;
+}
+
+.red-logo {
+    height: 70%;
+}
+
+.socialmediaicon {
+    height: 10%;
+}
+
+.map-img {
+    height: 100%;
+}
 
 /** Оформление: фон**--------------------------------------------------------------------------------------------------**/
 /***Фоновое изображение - раздел Header***/
@@ -853,3 +902,180 @@ footer {
     background-color: #EF3527;
     background-size: cover;
 }
+
+/* Медиазапросы: ========================================================================== */
+/** 768-1024 (планшет) ------------------------------------------------------------------------------**/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /*Гриды*/
+    .outer-container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 100vh 15vh 85vh 100vh 70vh 100vh 70vh;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header"
+            "logos"
+            "about"
+            "focus"
+            "numbers"
+            "projects"
+            "contact-map";
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: 5% 20% 50% 20% 5%;
+        grid-template-rows: 5% 8% 12% 40% 10% 25%;
+        align-items: center;
+        justify-items: center;
+        grid-template-areas:
+            ". . . . . "
+            ". header-logo navigation-top select ."
+            ". . . . . "
+            ". . header-text . . "
+            ". . video-btn . . "
+            ". . . . . ";
+    }
+
+    .focus {
+        display: grid;
+        grid-template-columns: 5% repeat(3, 28%) 5%;
+        grid-template-rows: 10% repeat(2, 37%) 10%;
+        gap: 2% 1.5%;
+        grid-template-areas:
+            ". . . . ."
+            ". focusbox-one focusbox-two focusbox-three ."
+            ". focusbox-four focusbox-five focusbox-six ."
+            ". . . . .";
+    }
+
+    .focusbox-one {
+        border: none;
+        padding-top: 0px;
+    }
+
+    .focusbox-text2 {
+        padding-right: 6px;
+    }
+
+    .numbers {
+        display: grid;
+        grid-template-columns: 5% 15% 20% 10% 20% 10% 15% 5%;
+        grid-template-rows: 8% 38% 8% 38% 8%;
+        gap: 0px 0px;
+        justify-items: center;
+        align-items: start;
+        grid-template-areas:
+            ". . . . . .  . ."
+            ". numbersbox-one numbersbox-one  numbersimg2 numbersbox-two  numbersimg3 numbersbox-three ."
+            ". . . . . . .  ."
+            ". numbersimg4 numbersbox-four  numbersimg5 numbersbox-five  numbersimg6 numbersbox-six ."
+            ". . . . . . . .";
+    }
+
+    .numbersbox-one {
+        grid-area: numbersbox-one;
+        margin-left: 0px;
+    }
+
+    .numbersimg2,
+    .numbersimg3,
+    .numbersimg4,
+    .numbersimg5,
+    .numbersimg6 {
+        margin-left: 30%;
+        margin-top: 15%;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: 5% repeat(3, 28%) 5%;
+        grid-template-rows: 10% repeat(2, 37%) 10%;
+        gap: 2% 1.5%;
+        grid-template-areas:
+            ". . . . ."
+            ". projectbox-two projectbox-two projectbox-one ."
+            ". projectbox-three projectbox-four projectbox-five ."
+            ". . . . .";
+    }
+
+    .projectbox-one {
+        border: none;
+        padding-top: 0%;
+    }
+
+    .projectbox-text5 {
+        grid-area: projectbox-text5;
+    }
+
+    .contact-map {
+        display: grid;
+        grid-template-columns: 8% 27% 3% 54% 8%;
+        grid-template-rows: 12% 13% 60% 15%;
+        gap: 0px 0px;
+        justify-items: left;
+        grid-template-areas:
+            ". . .  . ."
+            ". red-logo . map ."
+            ". contact . map ."
+            ". . .  . .";
+    }
+
+    .social-media {
+        margin-top: 20%;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    /** Типографика **/
+    h1 {
+        font-size: 75px;
+    }
+
+    h2 {
+        font-size: 44px;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 22px;
+        margin 0px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    p.header-intro {
+        font-size: 24px;
+    }
+
+    p.about-text {
+        padding-top: 6vh;
+    }
+
+    a.nav-link {
+        line-height: 28px;
+    }
+
+    .navigation-top,
+    .select {
+        font-size: 16px;
+    }
+
+    /** Оформление: кнопки **/
+    .round-btn {
+        width: 70%;
+    }
+
+    .red-btn {
+        padding: 8px 16px;
+    }
+
+    /** -> 767 (смартфон) ------------------------------------------------------------------------------**/
+    @media screen and (max-width: 767px) {}
