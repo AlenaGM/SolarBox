@@ -399,10 +399,6 @@
     grid-area: red-logo;
 }
 
-.social-media {
-    margin-top: 80px;
-}
-
 .social-link {
     margin-right: 30px;
 }
@@ -907,12 +903,11 @@ footer {
 /** 768-1080 (планшет) ------------------------------------------------------------------------------**/
 @media screen and (min-width: 768px) and (max-width: 1080px) {
 
-    /******************/
-    /*Гриды*/
+    /*Позиционирование: гриды, отступы, поля, выравнивание (по порядку)*/
     .outer-container {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 100vh 15vh 85vh 100vh 70vh 100vh 70vh;
+        grid-template-rows: 100vh 15vh 85vh 100vh 100vh 100vh 100vh;
         gap: 0px 0px;
         grid-auto-flow: row;
         grid-template-areas:
@@ -956,11 +951,6 @@ footer {
             ". . . . .";
     }
 
-    .focusbox-one {
-        border: none;
-        padding-top: 0px;
-    }
-
     .focusbox-text2 {
         padding-right: 6px;
     }
@@ -968,7 +958,7 @@ footer {
     .numbers {
         display: grid;
         grid-template-columns: 5% 15% 20% 10% 20% 10% 15% 5%;
-        grid-template-rows: 8% 38% 8% 38% 8%;
+        grid-template-rows: 16% 38% 8% 38%;
         gap: 0px 0px;
         justify-items: center;
         align-items: start;
@@ -976,8 +966,7 @@ footer {
             ". . . . . .  . ."
             ". numbersbox-one numbersbox-one  numbersimg2 numbersbox-two  numbersimg3 numbersbox-three ."
             ". . . . . . .  ."
-            ". numbersimg4 numbersbox-four  numbersimg5 numbersbox-five  numbersimg6 numbersbox-six ."
-            ". . . . . . . .";
+            ". numbersimg4 numbersbox-four  numbersimg5 numbersbox-five  numbersimg6 numbersbox-six .";
     }
 
     .numbersbox-one {
@@ -1006,30 +995,25 @@ footer {
             ". . . . .";
     }
 
-    .projectbox-one {
-        border: none;
-        padding-top: 0%;
-    }
-
-    .projectbox-text5 {
-        grid-area: projectbox-text5;
-    }
-
     .contact-map {
         display: grid;
-        grid-template-columns: 8% 27% 3% 54% 8%;
-        grid-template-rows: 12% 13% 60% 15%;
+        grid-template-columns: 8% 25% 5% 54% 8%;
+        grid-template-rows: 10% 20% 55% 15%;
         gap: 0px 0px;
         justify-items: left;
         grid-template-areas:
             ". . .  . ."
-            ". red-logo . map ."
+            ". red-logo . . ."
             ". contact . map ."
             ". . .  . .";
     }
 
-    .social-media {
-        margin-top: 20%;
+    .contact {
+        align-self: center;
+    }
+
+    .socialmediaicon {
+        margin-top: 10%;
     }
 
     .footer {
@@ -1082,10 +1066,321 @@ footer {
         padding: 8px 16px;
     }
 
+    /** Оформление: отсутствие желтой рамки - разделы Focus и Projects **/
+    .focusbox-oneь .projectbox-one {
+        border: none;
+        padding-top: 0px;
+    }
+
     /** Оформление: вертикальная линия над разделом Contact-Map **/
     .contact-map {
         border-top: solid 1px rgba(255, 255, 255, 0.5);
     }
 
-    /** -> 767 (смартфон) ------------------------------------------------------------------------------**/
-    @media screen and (max-width: 767px) {}
+    /** Оформление: картинки **/
+    .red-logo {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/** -> 767 (смартфон вертикально) ------------------------------------------------------------------------------**/
+@media screen and (max-width: 767px) and (orientation:portrait) {
+
+    /*Позиционирование: гриды, отступы, поля, выравнивание (по порядку)*/
+    .outer-container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 100vh 15vh 85vh 100vh 100vh 100vh 100vh;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header"
+            "logos"
+            "about"
+            "focus"
+            "numbers"
+            "projects"
+            "contact-map";
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: 5% 20% 50% 20% 5%;
+        grid-template-rows: 5% 8% 12% 40% 10% 25%;
+        align-items: center;
+        justify-items: center;
+        grid-template-areas:
+            ". . . . . ."
+            ". header-logo navigation-top select . ."
+            ". . . . . ."
+            ". . header-text . . ."
+            ". . video-btn . . ."
+            ". . . . . ."
+            ". . . . . ."
+            ". . . . . ."
+            ". . . . . .";
+    }
+
+    .select {
+        justify-self: center;
+    }
+
+    .logos {
+        grid-template-columns: 10% repeat(7, 1fr) 10%;
+        grid-template-rows: 30% 40% 30%;
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 5% repeat(4, 10%) 12% 14% 12% 12% 5%;
+        grid-template-rows: 7% 6.5% 7.5% 10% 10% 5% 5% 7.5% 7% 8.5% 10% 10% 6%;
+        gap: 0px 0px;
+        justify-items: stretch;
+    }
+
+    .about-textbox {
+        grid-area: 3 / 2 / 11 / 8;
+    }
+
+    .about-textbox {
+        padding-top: 3vh;
+        padding-left: 5vw;
+        padding-right: 3vw;
+    }
+
+    .about-img-bg {
+        grid-area: 8 / 6 / 13 / 11;
+        justify-self: right;
+    }
+
+    .about-img {
+        grid-area: 8 / 5 / 11 / 9;
+        justify-self: center;
+        order: 1;
+    }
+
+    .about-textbox {
+        padding-top: 3vh;
+        padding-left: 5vw;
+        padding-right: 3vw;
+    }
+
+    .focus {
+        display: grid;
+        grid-template-columns: 5% repeat(2, 37.5%) 5%;
+        grid-template-rows: 13% repeat(3, 21%) 14%;
+        gap: 2.5% 5%;
+        grid-template-areas:
+            ". . . ."
+            ". focusbox-one focusbox-two ."
+            ". focusbox-three focusbox-four ."
+            ". focusbox-five focusbox-six ."
+            ". . . .";
+    }
+
+    .focusbox-text2,
+    .focusbox-text3,
+    .focusbox-text4,
+    .focusbox-text5,
+    .focusbox-text6 {
+        padding-right: 6px;
+    }
+
+    .numbers {
+        display: grid;
+        grid-template-columns: repeat(2, 10%) repeat(2, 30% 10%);
+        grid-template-rows: 7% 20% 7% repeat(2, 20% 2%) 22%;
+        gap: 0px 0px;
+        justify-items: center;
+        align-items: start;
+        grid-template-areas:
+            ". . . . . ."
+            ". numbersbox-one numbersbox-one  numbersbox-one numbersbox-one ."
+            ". . . . . ."
+            ". numbersimg2 numbersbox-two numbersimg3 numbersbox-three ."
+            ". . . . . ."
+            ". numbersimg4 numbersbox-four  numbersimg5 numbersbox-five ."
+            ". . . . . ."
+            ". numbersimg6 numbersbox-six . . .";
+    }
+
+    .numbersbox-one {
+        grid-area: numbersbox-one;
+        margin-left: 10px;
+    }
+
+    .numbersimg2,
+    .numbersimg3,
+    .numbersimg4 {
+        margin-left: 0%;
+        margin-top: 0%;
+        margin-right: 20%;
+    }
+
+    .numbersimg5,
+    .numbersimg6 {
+        margin-left: 0%;
+        margin-top: 0%;
+        margin-right: 30%;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: 5% repeat(2, 37.5%) 5%;
+        grid-template-rows: 13% repeat(3, 21%) 14%;
+        gap: 2.5% 5%;
+        grid-template-areas:
+            ". . . ."
+            ". projectbox-two projectbox-two ."
+            ". projectbox-three projectbox-one ."
+            ". projectbox-four projectbox-five ."
+            ". . . .";
+    }
+
+    .projectbox-text2,
+    .projectbox-text3,
+    .projectbox-text4,
+    .projectbox-text5 {
+        padding-right: 6px;
+    }
+
+    .contact-map {
+        display: grid;
+        grid-template-columns: 15% 70% 15%;
+        grid-template-rows: 15% 15% 50% 20%;
+        gap: 0px 0px;
+        justify-items: left;
+        grid-template-areas:
+            ". . .  . ."
+            ". red-logo ."
+            ". contact ."
+            ". . .  . .";
+    }
+
+    .red-logo {
+        justify-self: center;
+    }
+
+    .contact {
+        padding-top: 15%;
+        padding-left: 25%;
+    }
+
+    .social-media {
+        margin-top: 20%;
+        justify-self: center;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    /** Типографика **/
+    h1 {
+        font-size: 75px;
+    }
+
+    h2 {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 0.2px;
+        text-align: left;
+    }
+
+    h2.about-title {
+        line-height: 0px;
+    }
+
+    h2.numbers-title {
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        margin: 0px;
+        padding-left: 5px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 18px;
+        text-align: left;
+    }
+
+    p.header-intro {
+        font-size: 24px;
+    }
+
+    p.about-text {
+        padding-top: 0px;
+    }
+
+    p.numbers-text {
+        font-size: 10px;
+    }
+
+    a.nav-link {
+        /*не трогала*/
+        line-height: 28px;
+    }
+
+    .navigation-top,
+    .select {
+        /*не трогала*/
+        font-size: 16px;
+    }
+
+    /** Оформление: кнопки **/
+    .round-btn {
+        width: 70%;
+    }
+
+    .red-btn {
+        padding: 4px 8px;
+        font-size: smaller;
+    }
+
+    /** Оформление: отсутствие желтой рамки - разделы Focus и Projects **/
+    .focusbox-one,
+    .projectbox-one {
+        border: none;
+        padding-top: 0px;
+    }
+
+    /** Оформление: вертикальная линия над разделом Contact-Map **/
+    .contact-map {
+        border-top: solid 1px rgba(255, 255, 255, 0.5);
+    }
+
+    /** Оформление: картинки **/
+    .numbersimg2,
+    .numbersimg3,
+    .numbersimg4 {
+        width: 80%;
+    }
+
+
+    .numbersimg5,
+    .numbersimg6 {
+        width: 70%;
+    }
+
+    .red-logo {
+        width: 80%;
+        height: auto;
+    }
+
+    .socialmediaicon {
+        width: 15%;
+    }
+
+    .map {
+        display: none;
+    }
+}
